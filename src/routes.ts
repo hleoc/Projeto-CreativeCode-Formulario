@@ -11,7 +11,7 @@ routes.put('/users/update', UserController.update);
 routes.delete('/users/delete/:id', UserController.remove);
 
 routes.post('/endereco/create', EnderecoController.create);
-routes.get('/encereco', EnderecoController.index);
+routes.get('/endereco', EnderecoController.index);
 routes.get('/endereco/:id', EnderecoController.indexById);
 routes.put('/endereco/update', EnderecoController.update);
 routes.delete('/endereco/delete/:id', EnderecoController.remove);

@@ -41,7 +41,7 @@ export async function updateUser(
 ) {
   const user = await connection;
   const sql =
-    'UPDATE users SET nome=$1, telefone=$2, email=$3, idade=$4, peso=$5, senha=$6, etinia=$7 WHERE id=$8';
+    'UPDATE users SET nome=$1, telefone=$2, email=$3, idade=$4, peso=$5, senha=$6, etinia=$7 WHERE id=id';
   const values = [nome, telefone, email, idade, peso, senha, etinia];
   return await user.query(sql, values);
 }
