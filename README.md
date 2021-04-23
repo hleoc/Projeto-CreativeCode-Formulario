@@ -1,4 +1,4 @@
-# Boas vindas ao repositório do Projeto CreativeCode Formulário BACK-END!
+## Boas vindas ao repositório do Projeto CreativeCode Formulário BACK-END!
 Aqui serão encontrados os detalhes de como o projeto foi estruturado. #vqv 🚀
 
 
@@ -23,6 +23,7 @@ A CreativeCode está desenvolvendo uma aplicação para cadastro dos seus usuár
   * `Rode o script do arquivo script.sql no PostgreSQL`
 
 6. Configure um arquivo .env com as seguintes variáveis de ambiente
+
   MYSQL_USER=coloqueSeuUser
   MYSQL_PASSWORD=coloqueSeuPassword
   HOSTNAME=localhost
@@ -37,6 +38,7 @@ A CreativeCode está desenvolvendo uma aplicação para cadastro dos seus usuár
 ## Instruções para testar o projeto:
 - Abra um novo terminal e digite o comando
   * `npm test`
+
 OBS: a aplicação deve estar rodando.
 
 
@@ -61,16 +63,16 @@ O Projeto CreativeCode Formulário será realizado utilizando o JWT para autenti
 
 
 ## Tecnologias utilizadas
-VSCode
-JavaScript
-React
-NodeJS
-TypeScript
-PostgreSQL
-DBeaver
-Postman
-Git/Github
-ESLint
+- VSCode
+- JavaScript
+- React
+- NodeJS
+- TypeScript
+- PostgreSQL
+- DBeaver
+- Postman
+- Git/Github
+- ESLint
 
 
 ## Melhorias Futuras
