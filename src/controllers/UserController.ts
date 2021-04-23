@@ -14,10 +14,6 @@ class UserController {
       if (!validateEmail(email)) {
         return res.status(401).json({ message: 'Email inválido' });
       }
-      /* const findEmail = await getByEmail(email);
-      if (findEmail) {
-        return res.status(401).json({ message: 'Usuário já cadastrado' });
-      } */
       const newUser = await createUser(nome, telefone, email, idade, peso, senha, etinia);
       return res.status(201).json(newUser);
     } catch (error) {
@@ -37,7 +33,7 @@ class UserController {
   public async indexById(req: Request, res: Response) {
     try {
       const { id } = req.params;
-      const users = await findOne(parseInt(id));
+      const users = await findOne(Number(id));
       return res.status(200).json(users);
     } catch (error) {
       return res.status(500).json({ message: 'Algo deu errado.' });

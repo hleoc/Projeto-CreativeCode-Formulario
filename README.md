@@ -22,10 +22,9 @@ A CreativeCode está desenvolvendo uma aplicação para cadastro dos seus usuár
 5. Start o banco de dados PostgreSQL para criar o banco de dados e a tabela
   * `Rode o script do arquivo script.sql no PostgreSQL`
 
-6. Configure um arquivo .env com as seguintes variáveis de ambiente
-  POSTGRE_DB_URL=ColoqueSuaConnectionString
+6. Adicione no arquivo Connection.ts a sua connection string
+  connectionString: `ColoqueSuaConnectionString`
  
-
 7. Em uma aba do terminal rode o servidor do NodeJs
   * `npm run dev`
 
