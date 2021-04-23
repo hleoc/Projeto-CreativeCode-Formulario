@@ -61,7 +61,6 @@ class UserController {
     try {
       const { id } = req.params;
       const users = await removeUser(Number(id));
-      console.log("passei por aqui");
       return res.status(200).json(users);
     } catch (error) {
       return res.status(500).json({ message: 'Algo deu errado.' });

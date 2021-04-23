@@ -1,5 +1,4 @@
-async function connect() {
-  
+async function connect() {  
   const { Pool } = require('pg');
   const pool = new Pool({
     connectionString:
