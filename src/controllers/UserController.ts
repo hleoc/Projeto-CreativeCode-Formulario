@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { createUser, getByEmail, findAll, findOne, updateUser, removeUser } from '../schemas/User';
+import { createUser, findAll, findOne, updateUser, removeUser } from '../schemas/User';
 
 function validateEmail(email: string) {
   const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
