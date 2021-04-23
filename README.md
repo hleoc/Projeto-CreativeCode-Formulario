@@ -11,10 +11,10 @@ A CreativeCode está desenvolvendo uma aplicação para cadastro dos seus usuár
 1. Crie uma pasta para onde o projeto será clonado
 
 2. Clone o repositório
-  * `git clone git@github.com:hleoc/`
+  * `git clone git@github.com:hleoc/Projeto-CreativeCode-Formulario.git`
 
 3. Entre na pasta do repositório que você acabou de clonar
-  * `cd `
+  * `cd Projeto-CreativeCode-Formulario`
 
 4. Instale as dependências
   * `npm install`
@@ -23,11 +23,6 @@ A CreativeCode está desenvolvendo uma aplicação para cadastro dos seus usuár
   * `Rode o script do arquivo script.sql no PostgreSQL`
 
 6. Configure um arquivo .env com as seguintes variáveis de ambiente
-
-  MYSQL_USER=coloqueSeuUser
-  MYSQL_PASSWORD=coloqueSeuPassword
-  HOSTNAME=localhost
-  NODE_ENV=test
   POSTGRE_DB_URL=ColoqueSuaConnectionString
  
 
