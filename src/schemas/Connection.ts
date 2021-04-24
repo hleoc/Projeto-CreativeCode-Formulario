@@ -1,7 +1,7 @@
 async function connect() {  
   const { Pool } = require('pg');
   const pool = new Pool({
-    connectionString:
+    connectionString: 
   });
 
   //apenas testando a conexão

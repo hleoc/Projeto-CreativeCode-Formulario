@@ -35,29 +35,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var User_1 = require("../schemas/User");
-function validateEmail(email) {
-    var regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-    return regexEmail.test(String(email).toLowerCase());
-}
-var UserController = /** @class */ (function () {
-    function UserController() {
+var Endereco_1 = require("../schemas/Endereco");
+var AddressController = /** @class */ (function () {
+    function AddressController() {
     }
-    UserController.prototype.create = function (req, res) {
+    AddressController.prototype.create = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, nome, telefone, email, idade, peso, senha, etinia, newUser, error_1;
+            var _a, idUser, endereco, numero, complemento, cep, cidade, estado, newAddress, error_1;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         _b.trys.push([0, 2, , 3]);
-                        _a = req.body, nome = _a.nome, telefone = _a.telefone, email = _a.email, idade = _a.idade, peso = _a.peso, senha = _a.senha, etinia = _a.etinia;
-                        if (!validateEmail(email)) {
-                            return [2 /*return*/, res.status(401).json({ message: 'Email inválido' })];
-                        }
-                        return [4 /*yield*/, User_1.createUser(nome, telefone, email, idade, peso, senha, etinia)];
+                        _a = req.body, idUser = _a.idUser, endereco = _a.endereco, numero = _a.numero, complemento = _a.complemento, cep = _a.cep, cidade = _a.cidade, estado = _a.estado;
+                        return [4 /*yield*/, Endereco_1.createAddress(idUser, endereco, numero, complemento, cep, cidade, estado)];
                     case 1:
-                        newUser = _b.sent();
-                        return [2 /*return*/, res.status(201).json(newUser)];
+                        newAddress = _b.sent();
+                        return [2 /*return*/, res.status(201).json(newAddress)];
                     case 2:
                         error_1 = _b.sent();
                         return [2 /*return*/, res.status(500).json({ message: 'Algo deu errado.' })];
@@ -66,17 +59,17 @@ var UserController = /** @class */ (function () {
             });
         });
     };
-    UserController.prototype.index = function (req, res) {
+    AddressController.prototype.index = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var users, error_2;
+            var address, error_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, User_1.findAll()];
+                        return [4 /*yield*/, Endereco_1.findAll()];
                     case 1:
-                        users = _a.sent();
-                        return [2 /*return*/, res.json(users)];
+                        address = _a.sent();
+                        return [2 /*return*/, res.json(address)];
                     case 2:
                         error_2 = _a.sent();
                         return [2 /*return*/, res.status(500).json({ message: 'Algo deu errado.' })];
@@ -85,18 +78,18 @@ var UserController = /** @class */ (function () {
             });
         });
     };
-    UserController.prototype.indexById = function (req, res) {
+    AddressController.prototype.indexById = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var id, users, error_3;
+            var id, address, error_3;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
                         id = req.params.id;
-                        return [4 /*yield*/, User_1.findOne(Number(id))];
+                        return [4 /*yield*/, Endereco_1.findOneAddress(Number(id))];
                     case 1:
-                        users = _a.sent();
-                        return [2 /*return*/, res.status(200).json(users)];
+                        address = _a.sent();
+                        return [2 /*return*/, res.status(200).json(address)];
                     case 2:
                         error_3 = _a.sent();
                         return [2 /*return*/, res.status(500).json({ message: 'Algo deu errado.' })];
@@ -105,21 +98,18 @@ var UserController = /** @class */ (function () {
             });
         });
     };
-    UserController.prototype.update = function (req, res) {
+    AddressController.prototype.update = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, nome, telefone, email, idade, peso, senha, etinia, editUser, error_4;
+            var _a, idUser, endereco, numero, complemento, cep, cidade, estado, editAddress, error_4;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         _b.trys.push([0, 2, , 3]);
-                        _a = req.body, nome = _a.nome, telefone = _a.telefone, email = _a.email, idade = _a.idade, peso = _a.peso, senha = _a.senha, etinia = _a.etinia;
-                        if (!validateEmail(email)) {
-                            return [2 /*return*/, res.status(401).json({ message: 'Email inválido' })];
-                        }
-                        return [4 /*yield*/, User_1.updateUser(nome, telefone, email, idade, peso, senha, etinia)];
+                        _a = req.body, idUser = _a.idUser, endereco = _a.endereco, numero = _a.numero, complemento = _a.complemento, cep = _a.cep, cidade = _a.cidade, estado = _a.estado;
+                        return [4 /*yield*/, Endereco_1.updateAddress(idUser, endereco, numero, complemento, cep, cidade, estado)];
                     case 1:
-                        editUser = _b.sent();
-                        return [2 /*return*/, res.status(201).json(editUser)];
+                        editAddress = _b.sent();
+                        return [2 /*return*/, res.status(201).json(editAddress)];
                     case 2:
                         error_4 = _b.sent();
                         return [2 /*return*/, res.status(500).json({ message: 'Algo deu errado.' })];
@@ -128,18 +118,18 @@ var UserController = /** @class */ (function () {
             });
         });
     };
-    UserController.prototype.remove = function (req, res) {
+    AddressController.prototype.remove = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var id, users, error_5;
+            var id, address, error_5;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
                         id = req.params.id;
-                        return [4 /*yield*/, User_1.removeUser(Number(id))];
+                        return [4 /*yield*/, Endereco_1.removeAddress(Number(id))];
                     case 1:
-                        users = _a.sent();
-                        return [2 /*return*/, res.status(200).json(users)];
+                        address = _a.sent();
+                        return [2 /*return*/, res.status(200).json(address)];
                     case 2:
                         error_5 = _a.sent();
                         return [2 /*return*/, res.status(500).json({ message: 'Algo deu errado.' })];
@@ -148,6 +138,6 @@ var UserController = /** @class */ (function () {
             });
         });
     };
-    return UserController;
+    return AddressController;
 }());
-exports.default = new UserController();
+exports.default = new AddressController();

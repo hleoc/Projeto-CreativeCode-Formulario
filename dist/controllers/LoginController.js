@@ -34,29 +34,42 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-function connect() {
-    return __awaiter(this, void 0, void 0, function () {
-        var Pool, pool, client, res;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    Pool = require('pg').Pool;
-                    pool = new Pool({
-                        connectionString: 
-                    });
-                    return [4 /*yield*/, pool.connect()];
-                case 1:
-                    client = _a.sent();
-                    console.log('Criou pool de conexões no PostgreSQL!');
-                    return [4 /*yield*/, client.query('SELECT NOW()')];
-                case 2:
-                    res = _a.sent();
-                    console.log(res.rows[0]);
-                    client.release();
-                    return [2 /*return*/, pool.connect()];
-            }
-        });
-    });
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 }
-exports.default = connect();
+Object.defineProperty(exports, "__esModule", { value: true });
+var jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+var User_1 = require("../schemas/User");
+var LoginController = /** @class */ (function () {
+    function LoginController() {
+    }
+    LoginController.prototype.login = function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _a, email, senha, findEmail, token, error_1;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _b.trys.push([0, 2, , 3]);
+                        _a = req.body, email = _a.email, senha = _a.senha;
+                        return [4 /*yield*/, User_1.getByEmail(email)];
+                    case 1:
+                        findEmail = _b.sent();
+                        if (!findEmail) {
+                            return [2 /*return*/, res.status(401).json({ message: 'Email incorreto' })];
+                        }
+                        if (!senha) {
+                            return [2 /*return*/, res.status(401).json({ message: 'Email incorreto' })];
+                        }
+                        token = jsonwebtoken_1.default.sign({ email: email }, 'secret', { expiresIn: '15d' });
+                        return [2 /*return*/, res.status(200).json({ token: token })];
+                    case 2:
+                        error_1 = _b.sent();
+                        return [2 /*return*/, res.status(500).json({ message: 'Algo deu errado.' })];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return LoginController;
+}());
+exports.default = new LoginController();
