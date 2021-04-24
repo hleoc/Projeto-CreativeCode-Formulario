@@ -70,4 +70,5 @@ O Projeto CreativeCode Formulário será realizado utilizando o JWT para autenti
 
 
 ## Melhorias Futuras
-Utilizar a funcionalidade enum para o campo Etinia.
+- Utilizar a funcionalidade enum para o campo Etinia.
+- Utilizar o TypeORM para fazer o mapeamento objeto relacional.
